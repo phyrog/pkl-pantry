@@ -2,8 +2,8 @@ amends "pkl:Project"
 
 package {
   name = "test"
-  baseUri = "package://github.com/phyrog/pkl-pantry/test"
   version = "0.1.0"
+  baseUri = "package://github.com/phyrog/pkl-pantry/releases/download/\(name)%40\(version)/\(name)@\(version)"
   packageZipUrl = "https://github.com/phyrog/pkl-pantry/releases/download/\(name)%40\(version)/\(name)@\(version).zip"
 }
 
