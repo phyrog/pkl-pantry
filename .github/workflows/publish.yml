@@ -23,8 +23,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Download pkl
+        shell: bash
         run: |
-          wget -O pkl https://github.com/apple/pkl/releases/download/0.25.1/pkl-linux-amd64
+          wget -q -O pkl https://github.com/apple/pkl/releases/download/0.25.1/pkl-linux-amd64
           chmod a+x pkl
           ./pkl --version
           export PATH="$PATH:$(pwd)"
@@ -37,7 +38,7 @@ jobs:
         env:
           REPO: self
           BRANCH: static
-          FOLDER: .out
+          FOLDER: .out/${{ github.ref }}
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload package to release
         uses: svenstaro/upload-release-action@v2
