@@ -30,15 +30,11 @@ jobs:
           export PATH="$PATH:$(pwd)"
           cd ${{ steps.split.outputs.PACKAGE_NAME }}
           pkl project package --output-path=../.out
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload package to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: pkl-packages
-          path: |
-            .out
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@v5
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          title: ${{ github.ref_name }}
+          repo_token: ${{ github.token }}
+          file: ".out/**/*.zip"
+          file_glob: true
+          tag: ${{ github.ref }}
+          overwrite: true
