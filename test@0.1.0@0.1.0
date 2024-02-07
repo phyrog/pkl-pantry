@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "packageUri": "package://github.com/phyrog/pkl-pantry/releases/download/test@0.1.0/test@0.1.0@0.1.0",
+  "version": "0.1.0",
+  "packageZipUrl": "https://github.com/phyrog/pkl-pantry/releases/download/test%400.1.0/test@0.1.0.zip",
+  "packageZipChecksums": {
+    "sha256": "7d08a65078e0bfc382c16fe1bb94546ab9a11e6f551087f362a4515ca98102fc"
+  },
+  "dependencies": {
+    "k8s": {
+      "uri": "package://pkg.pkl-lang.org/pkl-k8s/k8s@1.0.1",
+      "checksums": {
+        "sha256": "75c6d66d94c335417a3c502e107aaeadf7a60b4e1d34b2c979afe11193205a1a"
+      }
+    }
+  },
+  "authors": []
+}
