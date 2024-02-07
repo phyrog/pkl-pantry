@@ -30,6 +30,8 @@ jobs:
           export PATH="$PATH:$(pwd)"
           cd ${{ steps.split.outputs.PACKAGE_NAME }}
           pkl project package --output-path=../.out
+          mkdir ../.zips
+          mv ../.out/**/*.zip* ../.zips
       - name: Publish package file
         uses: s0/git-publish-subdir-action@develop
         env:
@@ -41,7 +43,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ github.token }}
-          file: ".out/**/*"
+          file: ".zips/*"
           file_glob: true
           tag: ${{ github.ref }}
           overwrite: true
