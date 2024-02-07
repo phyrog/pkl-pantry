@@ -31,7 +31,7 @@ jobs:
           cd ${{ steps.split.outputs.PACKAGE_NAME }}
           pkl project package --output-path=../.out
           mkdir ../.zips
-          mv ../.out/**/*.zip* ../.zips
+          mv ../.out/*/*.zip* ../.zips
       - name: Publish package file
         uses: s0/git-publish-subdir-action@develop
         env:
