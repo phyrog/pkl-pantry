@@ -38,7 +38,7 @@ jobs:
         env:
           REPO: self
           BRANCH: static
-          FOLDER: .out/${{ github.ref_name }}
+          FOLDER: .out
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload package to release
         uses: svenstaro/upload-release-action@v2
