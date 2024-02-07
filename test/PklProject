@@ -1,11 +1,4 @@
-amends "pkl:Project"
-
-package {
-  name = "test"
-  version = "0.1.0"
-  baseUri = "package://phyrog.github.com/pkl-pantry/\(name)"
-  packageZipUrl = "https://github.com/phyrog/pkl-pantry/releases/download/\(name)%40\(version)/\(name)@\(version).zip"
-}
+amends "../basePklProject.pkl"
 
 dependencies {
   ["k8s"] {

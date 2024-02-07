@@ -1,0 +1,10 @@
+module basePklProject
+
+amends "pkl:Project"
+
+package {
+  name = read("env:PKG_NAME")
+  version = read("env:PKG_VERSION")
+  baseUri = "package://phyrog.github.com/pkl-pantry/\(name)"
+  packageZipUrl = "https://github.com/phyrog/pkl-pantry/releases/download/\(name)%40\(version)/\(name)@\(version).zip"
+}

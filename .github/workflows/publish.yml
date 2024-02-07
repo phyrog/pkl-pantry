@@ -29,7 +29,9 @@ jobs:
           chmod a+x pkl
           ./pkl --version
           export PATH="$PATH:$(pwd)"
-          cd ${{ steps.split.outputs.PACKAGE_NAME }}
+          export PKG_NAME="${{ steps.split.outputs.PACKAGE_NAME }}"
+          export PKG_VERSION="${{ steps.split.outputs.PACKAGE_VERSION }}"
+          cd $PKG_NAME
           pkl project package --output-path=../.out
           mkdir ../.zips
           mv ../.out/*.zip* ../.zips/
