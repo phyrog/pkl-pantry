@@ -42,6 +42,7 @@ jobs:
           BRANCH: static
           FOLDER: .out
           GITHUB_TOKEN: ${{ github.token }}
+          CLEAR_GLOBS_FILE: ".gitkeep"
       - name: Upload package to release
         uses: svenstaro/upload-release-action@v2
         with:
