@@ -1,0 +1,48 @@
+open module brine
+
+import "@k8s/K8sResource.pkl"
+
+import "@k8s/api/core/v1/ConfigMap.pkl"
+import "@k8s/api/core/v1/Namespace.pkl"
+import "@k8s/api/core/v1/Secret.pkl"
+import "@k8s/api/core/v1/Service.pkl"
+
+import "@k8s/api/apps/v1/DaemonSet.pkl"
+import "@k8s/api/apps/v1/Deployment.pkl"
+import "@k8s/api/apps/v1/StatefulSet.pkl"
+
+import "@k8s/apiextensions-apiserver/pkg/apis/apiextensions/v1/CustomResourceDefinition.pkl"
+
+configMaps = resourceMapping(ConfigMap)
+namespaces = resourceMapping(Namespace)
+secrets = resourceMapping(Secret)
+services = resourceMapping(Service)
+
+daemonSets = resourceMapping(DaemonSet)
+deployments = resourceMapping(Deployment)
+statefulSets = resourceMapping(StatefulSet)
+
+crds = crdMapping()
+
+function resourceMapping(type): Mapping<String, unknown> =
+  new Mapping { default = (key) -> (type) { metadata { name = key } } }
+
+function crdMapping(): Mapping<String, CustomResourceDefinition> = new Mapping {
+  default = (key) -> (CustomResourceDefinition) { 
+    local n = key.split(".")
+    metadata { name = key }
+    spec {
+      group = n.drop(1).join(".")
+      names {
+        plural = n[0]
+      }
+    }
+  }
+}
+
+output {
+  value = module.toMap().values.flatMap((it) -> it.toMap().values.filterNonNull())
+  renderer = (K8sResource.output.renderer as YamlRenderer) {
+    isStream = true
+  }
+}
