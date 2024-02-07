@@ -1,4 +1,4 @@
-module main
+module hello
 
 hidden name = "World"
 text = "Hello \(name)"
