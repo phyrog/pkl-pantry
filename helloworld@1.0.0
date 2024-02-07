@@ -1,0 +1,11 @@
+{
+  "name": "helloworld",
+  "packageUri": "package://phyrog.github.com/pkl-pantry/helloworld@1.0.0",
+  "version": "1.0.0",
+  "packageZipUrl": "https://github.com/phyrog/pkl-pantry/releases/download/helloworld%401.0.0/helloworld@1.0.0.zip",
+  "packageZipChecksums": {
+    "sha256": "7fdb1fdb94b6b12a1bf181c6973ee1b5c6f4c07fdcdf0a7650511b4f70b6ae3c"
+  },
+  "dependencies": {},
+  "authors": []
+}
