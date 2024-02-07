@@ -25,8 +25,6 @@ jobs:
       - name: Download pkl
         shell: bash
         run: |
-          # debug
-          ps -p $$
           wget -q -O pkl https://github.com/apple/pkl/releases/download/0.25.1/pkl-linux-amd64
           chmod a+x pkl
           ./pkl --version
@@ -34,7 +32,7 @@ jobs:
           cd ${{ steps.split.outputs.PACKAGE_NAME }}
           pkl project package --output-path=../.out
           mkdir ../.zips
-          mv ../.out/${{ github.ref_name }}/*.zip* ../.zips
+          mv ../.out/*.zip* ../.zips/
       - name: Publish package file
         uses: s0/git-publish-subdir-action@develop
         env:
