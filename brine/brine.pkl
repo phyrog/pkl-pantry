@@ -1,26 +1,20 @@
 open module brine
 
 import "@k8s/K8sResource.pkl"
-
-import "@k8s/api/core/v1/ConfigMap.pkl"
-import "@k8s/api/core/v1/Namespace.pkl"
-import "@k8s/api/core/v1/Secret.pkl"
-import "@k8s/api/core/v1/Service.pkl"
-
-import "@k8s/api/apps/v1/DaemonSet.pkl"
-import "@k8s/api/apps/v1/Deployment.pkl"
-import "@k8s/api/apps/v1/StatefulSet.pkl"
-
 import "@k8s/apiextensions-apiserver/pkg/apis/apiextensions/v1/CustomResourceDefinition.pkl"
 
-configMaps = resourceMapping(ConfigMap)
-namespaces = resourceMapping(Namespace)
-secrets = resourceMapping(Secret)
-services = resourceMapping(Service)
+configMaps = resourceMapping(import("@k8s/api/core/v1/ConfigMap.pkl"))
+namespaces = resourceMapping(import("@k8s/api/core/v1/Namespace.pkl"))
+persistentVolumes = resourceMapping(import("@k8s/api/core/v1/PersistentVolume.pkl"))
+persistentVolumeClaims = resourceMapping(import("@k8s/api/core/v1/PersistentVolumeClaim.pkl"))
+pods = resourceMapping(import("@k8s/api/core/v1/Pod.pkl"))
+secrets = resourceMapping(import("@k8s/api/core/v1/Secret.pkl"))
+services = resourceMapping(import("@k8s/api/core/v1/Service.pkl"))
+serviceAccounts = resourceMapping(import("@k8s/api/core/v1/ServiceAccount.pkl"))
 
-daemonSets = resourceMapping(DaemonSet)
-deployments = resourceMapping(Deployment)
-statefulSets = resourceMapping(StatefulSet)
+daemonSets = resourceMapping(import("@k8s/api/apps/v1/DaemonSet.pkl"))
+deployments = resourceMapping(import("@k8s/api/apps/v1/Deployment.pkl"))
+statefulSets = resourceMapping(import("@k8s/api/apps/v1/StatefulSet.pkl"))
 
 crds = crdMapping()
 
