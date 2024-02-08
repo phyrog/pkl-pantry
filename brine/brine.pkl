@@ -34,6 +34,8 @@ function crdMapping(): Mapping<String, CustomResourceDefinition> = new Mapping {
   }
 }
 
+hidden values = new Dynamic {}
+
 output {
   value = module.toMap().values.flatMap((it) -> it.toMap().values.filterNonNull())
   renderer = (K8sResource.output.renderer as YamlRenderer) {
