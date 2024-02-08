@@ -1,0 +1,24 @@
+{
+  "name": "brine-full",
+  "packageUri": "package://phyrog.github.com/pkl-pantry/brine-full@0.1.0",
+  "version": "0.1.0",
+  "packageZipUrl": "https://github.com/phyrog/pkl-pantry/releases/download/brine-full%400.1.0/brine-full@0.1.0.zip",
+  "packageZipChecksums": {
+    "sha256": "b50cfdb00af894fc16623482af5adba541b60d63bcde35288dc5be6ef546fbb1"
+  },
+  "dependencies": {
+    "brine": {
+      "uri": "package://phyrog.github.io/pkl-pantry/brine@0.1.1",
+      "checksums": {
+        "sha256": "08932b7137d4455afa3f1da4d5db40c6706b2df10e6e7eea4a15b5bcf3206242"
+      }
+    },
+    "k8s": {
+      "uri": "package://pkg.pkl-lang.org/pkl-k8s/k8s@1.0.1",
+      "checksums": {
+        "sha256": "75c6d66d94c335417a3c502e107aaeadf7a60b4e1d34b2c979afe11193205a1a"
+      }
+    }
+  },
+  "authors": []
+}
