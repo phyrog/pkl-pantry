@@ -1,0 +1,10 @@
+amends "../basePklProject.pkl"
+
+dependencies {
+  ["k8s"] {
+    uri = "package://pkg.pkl-lang.org/pkl-k8s/k8s@1.0.1"
+  }
+  ["brine"] {
+    uri = "package://phyrog.github.io/pkl-pantry/brine@0.1.1"
+  }
+}

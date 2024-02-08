@@ -1,0 +1,31 @@
+open module brine
+
+extends "@brine/brine.pkl"
+
+mutatingWebhookConfigurations = resourceMapping(import("@k8s/api/admissionregistration/v1/MutatingWebhookConfiguration.pkl"))
+validatingWebhookConfigurations = resourceMapping(import("@k8s/api/admissionregistration/v1/ValidatingWebhookConfiguration.pkl"))
+
+selfSubjectReviews = resourceMapping(import("@k8s/api/authentication/v1/SelfSubjectReview.pkl"))
+tokenRequests = resourceMapping(import("@k8s/api/authentication/v1/TokenRequest.pkl"))
+tokenReviews = resourceMapping(import("@k8s/api/authentication/v1/TokenReview.pkl"))
+
+horizontalPodAutoscalers = resourceMapping(import("@k8s/api/autoscaling/v2/HorizontalPodAutoscaler.pkl"))
+
+cronJobs = resourceMapping(import("@k8s/api/batch/v1/CronJob.pkl"))
+jobs = resourceMapping(import("@k8s/api/batch/v1/Job.pkl"))
+
+certificateSigningRequests = resourceMapping(import("@k8s/api/certificates/v1/CertificateSigningRequest.pkl"))
+
+leases = resourceMapping(import("@k8s/api/coordination/v1/Lease.pkl"))
+
+endpoints = resourceMapping(import("@k8s/api/core/v1/Endpoints.pkl"))
+events = resourceMapping(import("@k8s/api/core/v1/Event.pkl"))
+limitRanges = resourceMapping(import("@k8s/api/core/v1/LimitRange.pkl"))
+nodes = resourceMapping(import("@k8s/api/core/v1/Node.pkl"))
+podTemplates = resourceMapping(import("@k8s/api/core/v1/PodTemplate.pkl"))
+replicationControllers = resourceMapping(import("@k8s/api/core/v1/ReplicationController.pkl"))
+resourceQuotas = resourceMapping(import("@k8s/api/core/v1/ResourceQuota.pkl"))
+
+ingresses = resourceMapping(import("@k8s/api/networking/v1/Ingress.pkl"))
+ingressClasses = resourceMapping(import("@k8s/api/networking/v1/IngressClass.pkl"))
+networkPolicies = resourceMapping(import("@k8s/api/networking/v1/NetworkPolicy.pkl"))
