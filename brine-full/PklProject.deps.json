@@ -10,9 +10,9 @@
     },
     "package://phyrog.github.io/pkl-pantry/brine@0": {
       "type": "remote",
-      "uri": "projectpackage://phyrog.github.io/pkl-pantry/brine@0.1.1",
+      "uri": "projectpackage://phyrog.github.io/pkl-pantry/brine@0.1.2",
       "checksums": {
-        "sha256": "08932b7137d4455afa3f1da4d5db40c6706b2df10e6e7eea4a15b5bcf3206242"
+        "sha256": "ebc8c9568c6b3fd3032150db4c00ab8d4446028a5c7dba4e62a37a0b5ddf6dc0"
       }
     }
   }
